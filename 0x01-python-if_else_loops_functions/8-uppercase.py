@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def uppercase(s):
     for i in s:
         temp = i
