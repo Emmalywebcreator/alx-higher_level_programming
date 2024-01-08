@@ -1,1 +1,1 @@
-python-is-everyting by Emmanuel
+python evertything is object by Emmanuel
