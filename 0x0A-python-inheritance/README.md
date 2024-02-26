@@ -1,1 +1,0 @@
-python inherentance by Emmalywebcreator
