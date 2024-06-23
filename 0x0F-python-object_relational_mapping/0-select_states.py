@@ -5,6 +5,7 @@ import sys
 
 
 def get_states():
+
     """Takes arguments argv to list from database
 
     Arguments:
@@ -28,5 +29,7 @@ def get_states():
     cur.close()
     db.close()
 
+
 if __name__ == "__main__":
+
     get_states()
