@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Script that lists all states from database hbtn_0e_0_usa"""
+
 import MySQLdb
 import sys
 
+"""Script that lists all states from database hbtn_0e_0_usa"""
 
 def get_states():
     """Takes arguments argv to list from database
