@@ -17,11 +17,10 @@ def list_a_state_obj():
     session = Session()
     rows = session.query(State).all()
 
-    for i in rows:
-        if 'a' in i.__dict__['name']:
-            print("{}: {}".format(i.__dict__['id'], i.__dict__['name']))
-
-    session.close()
+    for state in session.query(State) \
+                        .filter(State.name.ilike('%a%')) \
+                        .order_by(State.id.asc()):
+        print(f"{state.id}: {state.name}")
 
 
 if __name__ == "__main__":
