@@ -1,13 +1,4 @@
 #!/bin/bash
 # A Bash script that takes in a URL, sends a request to that URL, and displays the size of the body of the response
 
-#!/bin/bash
-# A Bash script that takes in a URL, sends a request to that URL, and displays the size of the body of the response
-
-if [ -z "$1" ]; then
-  echo "Usage: $0 <URL>"
-  exit 1
-fi
-
-size=$(curl -sL "$1" | wc -c)
-echo "$size"
+curl -Is "$1" | grep -w 'Content-Length' | cut -f2 -d' '
