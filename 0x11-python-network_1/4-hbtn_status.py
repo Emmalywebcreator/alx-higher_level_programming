@@ -6,11 +6,11 @@ import requests
 
 
 def main():
-    url = 'https://alx-intranet.hbtn.io/staus'
+    url = 'https://alx-intranet.hbtn.io/status'
     body = requests.get(url)
     print("body response:")
-    print("\t- type:",  type(body))
-    print("\t- content:", body)
+    print("\t- type:",  type(body.text))
+    print("\t- content:", body.text)
 
 
 if __name__ == '__main__':
