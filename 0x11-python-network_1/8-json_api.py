@@ -15,12 +15,12 @@ def main():
     and displays the response formatted as a simple user object.
     """
 
+    url = "http://0.0.0.0:5000/search_user"
     letter = sys.argv[1] if len(sys.argv) > 1 else ""
     payload = {"q": letter}
 
     try:
-        response =
-        requests.post("http://0.0.0.0:5000/search_user", data=payload)
+        response = requests.post(url, data=payload)
         response.raise_for_status()
 
         try:
