@@ -15,4 +15,4 @@ if __name__ == "__main__":
 
     response_body = urllib.request.Request(url, data)
     with urllib.request.urlopen(response_body) as res:
-        print(res.read().decode('utf8'))
+        print(res.read().decode('utf-8'))
