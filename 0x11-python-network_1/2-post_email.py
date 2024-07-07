@@ -16,12 +16,10 @@ def main():
     url = sys.argv[1]
     data = {'email': sys.argv[2]}
     encoded_data = urllib.parse.urlencode(data).encode('ascii')
-    try:
-        with urllib.request.urlopen(url, data=encoded_data) as response:
-            response_body = response.read().decode('utf-8')
-            print(response_body)
-    except Exception as e:
-        print(f"Error sending POST request: {e}")
+    
+    response_body = urllib.request.Request(url, data=encoded_data)
+    with urllib.request.urlopen(response_body) as res:
+        print(res.read().decode('utf8'))
 
 
 if __name__ == "__main__":
