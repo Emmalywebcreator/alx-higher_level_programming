@@ -1,18 +1,19 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+"""Display information about the response"""
 
 import urllib.request
 
-""" URL to fetch """
-url = 'https://alx-intranet.hbtn.io/status'
+def main():
+    url = 'https://alx-intranet.hbtn.io/status'
 
-""" Fetch the URL and handle the response"""
-with urllib.request.urlopen(url) as response:
-    """ Read the response content (bytes)"""
-    body = response.read()
+    with urllib.request.urlopen(url) as response:
+        body = response.read()
 
-    """ Display information about the response"""
-    print("Body response:")
-    print("\t- type:", type(body))
-    print("\t- content:", body)
-    print("\t- utf8 content:", body.decode('utf-8'))
+        print("Body response:")
+        print("\t- type:", type(body))
+        print("\t- content:", body)
+        print("\t- utf8 content:", body.decode('utf-8'))
+
+if __name__ == "__main__":
+    main()
 
