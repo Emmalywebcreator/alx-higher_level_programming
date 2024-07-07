@@ -14,7 +14,7 @@ def main():
 
     url = "https://alx-intranet.hbtn.io/status"
     resp = requests.get(url)
-    body = resp.text
+    body = resp.text()
     print("body response:")
     print("\t- type: {}".format(type(body)))
     print("\t- content: {}".format(body))
