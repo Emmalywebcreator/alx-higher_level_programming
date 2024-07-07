@@ -17,7 +17,7 @@ def main():
     email = sys.argv[2]
 
     data = {'email': email}
-    encoded_data = urllib.parse.urlencode(data).encode('utf-8')
+    encoded_data = urllib.parse.urlencode(data).encode('ascii')
     try:
         with urllib.request.urlopen(url, data=encoded_data) as response:
             response_body = response.read().decode('utf-8')
