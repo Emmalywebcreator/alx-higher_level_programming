@@ -4,7 +4,7 @@ and displays the body of the response.
 """
 
 
-imporit requests
+import requests
 
 
 def main():
@@ -14,10 +14,10 @@ def main():
 
     url = "https://alx-intranet.hbtn.io/status"
     resp = requests.get(url)
-    body = resp.text()
+    body = resp.text
     print("Body response:")
-    print("\t- type: {}".format(type(body)))
-    print("\t- content: {}".format(body))
+    print("\t- type:", (type(body)))
+    print("\t- content:", (body))
 
 
 if __name__ == "__main__":
