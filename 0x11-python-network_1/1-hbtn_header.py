@@ -9,7 +9,6 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: python get_request_id.py <URL>")
         return
-    
     url = sys.argv[1]
 
     try:
