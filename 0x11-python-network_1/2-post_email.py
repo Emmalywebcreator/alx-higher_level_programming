@@ -8,12 +8,7 @@ import urllib.parse
     with the email as a parameter
 """
 
-
-def main():
-    """
-    Send a POST request with an email parameter to a specified URL and
-    display the decoded body of the response.
-    """
+if __name__ == "__main__":
     url = sys.argv[1]
     value = {'email': sys.argv[2]}
     data = urllib.parse.urlencode(value).encode('ascii')
@@ -21,7 +16,3 @@ def main():
     response_body = urllib.request.Request(url, data)
     with urllib.request.urlopen(response_body) as res:
         print(res.read().decode('utf8'))
-
-
-if __name__ == "__main__":
-    main()
