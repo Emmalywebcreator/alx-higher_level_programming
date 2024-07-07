@@ -14,15 +14,9 @@ import sys
 def main():
     url = sys.argv[1]
 
-    try:
-        with urllib.request.urlopen(url) as response:
-            x_request_id = response.getheader('X-Request-Id')
-            if x_request_id:
-                print(f"{x_request_id}")
-            else:
-                print("X-Request-Id header not found in the response.")
-    except Exception as e:
-        print(f"Error fetching URL: {e}")
+    with urllib.request.urlopen(url) as response:
+        x_request_id = dict(response.headers).get('X-Request-Id')
+        print(f"{x_request_id}")
 
 
 if __name__ == "__main__":
