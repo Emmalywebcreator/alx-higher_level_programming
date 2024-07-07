@@ -14,9 +14,7 @@ def main():
     display the decoded body of the response.
     """
     url = sys.argv[1]
-    email = sys.argv[2]
-
-    data = {'email': email}
+    data = {'email': sys.argv[2]}
     encoded_data = urllib.parse.urlencode(data).encode('ascii')
     try:
         with urllib.request.urlopen(url, data=encoded_data) as response:
