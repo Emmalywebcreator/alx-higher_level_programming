@@ -13,10 +13,11 @@ def main():
     """
 
     url = "https://alx-intranet.hbtn.io/status"
-    body = requests.get(url)
+    resp = requests.get(url)
+    body = resp.text
     print("body response:")
-    print("\t- type: {}".format(type(body.text)))
-    print("\t- content: {}".format(body.text))
+    print("\t- type: {}".format(type(body)))
+    print("\t- content: {}".format(body))
 
 
 if __name__ == '__main__':
