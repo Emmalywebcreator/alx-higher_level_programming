@@ -10,6 +10,7 @@ and prints the value of the X-Request-Id header found in the response.
 import urllib.request
 import sys
 
+
 def main():
     url = sys.argv[1]
 
