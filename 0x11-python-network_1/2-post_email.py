@@ -3,7 +3,7 @@
 import urllib.request
 import sys
 
-"""takes in a URL and an email, sends a POST request to the passed URL 
+"""takes in a URL and an email, sends a POST request to the passed URL
     with the email as a parameter
 """
 
@@ -16,11 +16,10 @@ def main():
     url = sys.argv[1]
     email = sys.argv[2]
 
-    data = 'email=' + urllib.parse.quote(email)
-
+    data = {'email': email}
+    encoded_data = urllib.parse.urlencode(data).encode('utf-8')
     try:
-        with urllib.request.urlopen(url, data=data.encode('utf-8'))
-        as response:
+        with urllib.request.urlopen(url, data=encoded_data) as response:
             response_body = response.read().decode('utf-8')
             print(response_body)
     except Exception as e:
