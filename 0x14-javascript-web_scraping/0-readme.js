@@ -3,9 +3,8 @@
 const fs = require('fs');
 
 if (process.argv.length > 2){
-  const filePath = process.argv[2];
 
-  fs.readFile(filePath, 'utf8', (data, err) => {
+  fs.readFile(process.argv[2], 'utf8', (data, err) => {
   if (err) {
     console.error(err);
   } else {
