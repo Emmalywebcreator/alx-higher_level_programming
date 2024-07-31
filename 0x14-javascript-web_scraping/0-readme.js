@@ -13,6 +13,4 @@ if (process.argv.length > 2){
 			console.log(data);
 		}
 	});
-} else {
-	console.error('Please provide a path as an argurement')
 }
