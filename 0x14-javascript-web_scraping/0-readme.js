@@ -2,15 +2,17 @@
 
 const fs = require('fs');
 
-if (process.argv.length > 2) {
-  fs.readFile(process.argv[2], 'utf8', (err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(data);
-    }
+if (process.argv.length > 2){
+  const filePath = process.argv[2];
+
+  fs.readFile(filePath, 'utf8', (data, err) => {
+  if (err) {
+    console.error(err);
+  } else {
+           console.log(data);
+  }
   });
 } else {
-  console.log('No file specified');
+	 console.log("Usage: node script.js <file-path>");
 }
-}
+
