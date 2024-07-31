@@ -2,14 +2,11 @@
 
 const fs = require('fs');
 
-if (process.argv.length > 2) {
-  fs.readFile(process.argv[2], 'utf8', (data, err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(data);
-    }
-  });
-} else {
-  console.log('No file specified');
+fs.readFile(process.argv[2], 'utf8', function (err, data) {
+  if (err) {
+    console.log(err);
+  } else {
+    process.stdout.write(data);
+  }
+});
 }
