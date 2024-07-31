@@ -11,6 +11,6 @@ if (process.argv.length > 2) {
     }
   });
 } else {
-  console.log('Usage: node script.js <path-to-file>');
+  console.log('No file specified');
 }
 }
