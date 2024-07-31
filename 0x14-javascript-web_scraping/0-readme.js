@@ -13,6 +13,5 @@ if (process.argv.length > 2) {
     }
   });
 } else {
-  console.log("Provide a specific path")
+  console.log('Provide a specific path');
 }
-
